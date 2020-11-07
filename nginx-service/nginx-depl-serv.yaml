@@ -30,10 +30,9 @@ metadata:
 spec:
   selector:
     app: nginx
-  type: NodePort
+  type: ClusterIP
   ports:
   - protocol: TCP
-    name: nginx
     port:  80
     targetPort:  80
     
