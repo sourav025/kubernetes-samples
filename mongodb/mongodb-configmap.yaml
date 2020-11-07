@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myconfigmap
+  labels:
+    app: mongodb-app
+data:
+  mongodb-server: mongodb-service
+  mongoexpress-theme: ambiance
+  mongodb-enable-admin: true
