@@ -3,12 +3,12 @@ apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: nginx-ingress
+  annotations:
+    kubernetes.io/ingress.class: gce
+    kubernetes.io/ingress.global-static-ip-name: gcp-souravs-me-ip
 spec:
   rules:
-  - host: mylocal.com
-    http:
-      paths:
-        - path: /
-          backend:
-            serviceName: nginx-service
-            servicePort: 80
+  - host: nginx.gcp.souravs.me
+  backend:
+    serviceName: nginx-service
+    servicePort: 80
