@@ -1,15 +1,19 @@
----
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: nginx-ingress-tls
+  annotations:
+    kubernetes.io/ingress.class: gce
+    kubernetes.io/ingress.global-static-ip-name: gcp-souravs-me
+    kubernetes.io/ingress.allow-http: "false"
+
 spec:
   tls:
     - hosts:
-      - mylocal.com
+      - gcp.souravs.me
       secretName: ingress-tls-secret
   rules:
-  - host: mylocal.com
+  - host: gcp.souravs.me
     http:
       paths:
         - path: /
